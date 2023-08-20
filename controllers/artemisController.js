@@ -24,6 +24,7 @@ pets.get("/", async (req, res) => {
   }
 });
 
+
 // SHOW
 // Route to retrieve a specific pet by its ID
 pets.get("/:id", async (req, res) => {
