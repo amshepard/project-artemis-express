@@ -1,23 +1,31 @@
-const cors = require("cors");
-const express = require("express");
+// const cors = require("cors");
+// const express = require("express");
+// const app = express();
+
+// // MIDDLEWARE
+// app.use(cors());
+// app.use(express.json());
+
+// // ROUTES
+// app.get("/", (req, res) => {
+//   res.send("Welcome to Artemis");
+// });
+
+// const artemisController = require("./controllers/artemisController.js"); 
+// app.use("/pets", artemisController);
+
+// // 404 PAGE
+// app.get("*", (req, res) => {
+//   res.status(404).send("Page not found");
+// });
+
+// // EXPORT
+// module.exports = app;
+
+const express = require('express');
 const app = express();
+const port = 3000;
 
-// MIDDLEWARE
-app.use(cors());
-app.use(express.json());
+app.get('/', (req, res) => res.send('Project Artemis!'));
 
-// ROUTES
-app.get("/", (req, res) => {
-  res.send("Welcome to Artemis");
-});
-
-const artemisController = require("./controllers/artemisController.js"); // Adjust the path accordingly
-app.use("/pets", artemisController);
-
-// 404 PAGE
-app.get("*", (req, res) => {
-  res.status(404).send("Page not found");
-});
-
-// EXPORT
-module.exports = app;
+app.listen(port, () => console.log(`Express app running on port ${port}!`));
