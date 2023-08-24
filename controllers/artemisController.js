@@ -17,6 +17,7 @@ const {
 // Route to retrieve all pets
 pets.get("/", async (req, res) => {
   const allPets = await getAllPets();
+  console.log(pets)
   if (allPets[0]) {
     res.status(200).json(allPets);
   } else {
